@@ -1,0 +1,6 @@
+ID,Role,Feature,Benefit
+1,"Surveillance Analyst","I want to see all relevant trade data in one view","so that I don't need to switch between 5 systems"
+2,"Surveillance Analyst","I want the system to highlight anomalous trading patterns automatically","so I can spot potential manipulation faster"
+3,"Surveillance Analyst","I want to see if a trader has a history of similar alerts","so I can assess their risk profile"
+4,"Compliance Manager","I want a complete audit trail of every investigation step","so that I can provide evidence to regulators"
+5,"Compliance Manager","I want to see metrics on alert resolution times and outcomes","so I can manage team performance and identify bottlenecks"

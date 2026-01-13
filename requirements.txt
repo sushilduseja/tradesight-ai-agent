@@ -1,0 +1,16 @@
+langchain
+langgraph
+langsmith
+fastapi
+uvicorn[standard]
+psycopg2-binary
+redis
+openai
+anthropic
+pinecone-client
+pandas
+scipy
+statsmodels
+streamlit
+plotly
+python-dotenv

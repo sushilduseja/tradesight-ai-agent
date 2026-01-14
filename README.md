@@ -10,10 +10,10 @@ A production-grade portfolio project demonstrating end-to-end product management
 Financial institutions face a persistent challenge in trade surveillance operations. Compliance teams must investigate thousands of system-generated alerts monthly to detect potential market abuse—spoofing, layering, front-running, and manipulation. Industry research indicates that traditional rule-based surveillance systems generate substantial false positive rates, requiring manual investigation of each alert.
 
 **Observed Pain Points:**
-- Analysts manually gather context from 5+ disparate systems per alert
+- Analysts manually gather context from disparate systems per alert
 - Investigation requires cross-referencing trade data, communications, market conditions, and patterns
 - High cognitive load from volume contributes to fatigue and delays  
-- Regulatory (FINRA, FCA, MAS) mandate timely investigation, directly impacting risk, cost, and retention
+- Regulatory bodies mandate timely investigation, directly impacting risk, cost, and retention
 
 ---
 
@@ -110,26 +110,38 @@ tradesight-ai-agent/
 
 ## Demonstration Scope
 
-### Working Prototype
+This repository demonstrates **end-to-end product thinking** through design-phase artifacts and prototype validation of architectural approach.
 
-**What's Included:**
-- Functional multi-agent system with 4 specialized agents.
-- 50 synthetic test alerts covering spoofing, layering, and front-running scenarios.
-- Streamlit interface showing an alert queue, detailed analysis, and agent reasoning traces.
-- LangSmith integration for observability.
-- Docker Compose setup for local deployment.
+**What's Demonstrated:**
 
-**What's Simulated:**
-- Market data API (using JSON fixtures).
-- Communication search (using pre-indexed sample emails).
-- Historical case library (10 labeled examples).
+*Product & Process:*
+- User research methodology applied to problem validation
+- RICE-based feature prioritization and MVP scoping
+- Agile sprint planning with clear deliverables
+- Risk mitigation and governance frameworks for regulated environments
+- Metrics-driven decision-making approach
 
-### Demo Flow
-1. Analyst opens a dashboard and sees a queue of alerts.
-2. Selects a high-priority alert.
-3. The system displays a summary, agent analysis, a recommendation (e.g., "ESCALATE"), and supporting evidence.
-4. The analyst reviews the reasoning and approves the escalation, routing it to a senior analyst.
-5. The system logs the decision with a full audit trail.
+*Technical Architecture:*
+- Multi-agent system design pattern with LangGraph orchestration
+- REST API contract specification for production integration
+- Decision logic framework (Escalate | Monitor | Dismiss)
+- Scalability patterns: parallel agent execution, caching, smart routing
+- Governance controls: audit trails, explainability requirements, human-in-the-loop design
+
+*Prototype Implementation:*
+- Mock implementation of 4-agent architecture demonstrating orchestration pattern
+- Streamlit dashboard showing UI flow and analyst decision points
+- API specification with request/response contracts
+- Sample alert analysis flow showing evidence mapping and recommendations
+
+**What's Not Included in Prototype:**
+- Live database connections (PostgreSQL, Pinecone) - architecture specified, not integrated
+- Real LLM integrations (GPT-4o, Claude) - pattern designed, using mock responses
+- Production infrastructure (Kubernetes, monitoring, logging) - infrastructure designed in technical docs
+- Historical case library - vector store design specified, not populated
+
+**Validation Approach:**
+The prototype validates the architectural approach through mock implementation: user flows, API contracts, agent interaction patterns, and decision logic are testable without external service dependencies.
 
 ---
 
@@ -166,25 +178,7 @@ This repository demonstrates product management and technical execution in AI sy
 
 - [Portfolio Specs](ai_pm_portfolio_specs.md) — Full product and technical vision
 - [PRD](docs/PRD.md) — Product requirements and user research
-- [Technical Design](docs/TECHNICAL_DESIGN.md) — Architecture and API specifications
+- [Technical Design](docs/TECHNICAL_DESIGN.md) — Architecture specifications and governance
 - [Sprint Plan](docs/SPRINT_PLAN.md) — 6-week MVP delivery roadmap
 - [User Stories](docs/user-stories.csv) — Detailed requirements
 
----
-
-## Demonstration Scope
-
-**Working Prototype Includes:**
-- Functional multi-agent system (4 specialized agents)
-- 50 synthetic test alerts (spoofing, layering, front-running)
-- Streamlit dashboard with alert queue and analysis views
-- LangSmith integration for observability
-- Docker Compose setup for local deployment
-
-**MVP Features:**
-- Data retrieval agent (trade data, client profiles, market data)
-- Pattern analysis agent (statistical anomalies, historical matching)
-- Decision synthesis with structured recommendations
-- Web interface for analyst review queue
-
-See [ai_pm_portfolio_specs.md](ai_pm_portfolio_specs.md) for complete feature breakdown and roadmap.

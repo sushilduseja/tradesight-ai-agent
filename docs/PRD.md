@@ -10,6 +10,8 @@ TradeSight is a multi-agent AI system that automates alert investigation workflo
 
 ### 1.3. Success Criteria
 
+These metrics define deployment success in a production environment. Prototype validation focuses on design approach: user research, architecture pattern, API contracts, and decision logic framework.
+
 | Metric | Target |
 |--------|--------|
 | **Investigation time per alert** | Reduce by 40% |

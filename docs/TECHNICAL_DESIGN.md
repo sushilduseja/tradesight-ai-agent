@@ -1,5 +1,11 @@
 # Technical Design Document: TradeSight AI Agent
 
+## Implementation Status
+
+This document specifies the **architecture and design approach** for the production system. The prototype repository includes mock implementations validating the design pattern without external service dependencies. Production deployment would require implementing the connections and integrations specified below.
+
+---
+
 ## 1. System Architecture
 
 ### 1.1. Multi-Agent System Design
@@ -112,17 +118,3 @@ The system exposes a REST API built with FastAPI.
 - Periodic audits for disparate impact across trader demographics
 - Outcome tracking to detect false positive patterns by alert type
 - Feedback loop mechanism for continuous model improvement
-- **Optimization**: Redis caching for frequently accessed data; smart routing to use cheaper/faster LLMs for low-priority alerts.
-- **Cost Management**: Strategies include model tier selection (GPT-4o vs. GPT-4o-mini), prompt optimization, and semantic caching.
-
-## 5. Responsible AI & Risk Mitigation
-
-### 5.1. Ethical Considerations
-- **Human-in-the-Loop**: The system only provides recommendations; a human makes the final decision.
-- **Explainability**: Every recommendation is accompanied by a complete reasoning chain and evidence mapping.
-- **Bias Monitoring**: Periodic audits will check for disparate impact across trader demographics and alert types.
-
-### 5.2. Regulatory Compliance
-- **Audit Trail**: Immutable logs (via LangSmith and application logs) track all agent actions, data sources, and human overrides.
-- **Data Privacy**: PII is not stored in vector embeddings, and sensitive communications are processed on-premise.
-- **Failover**: If the primary LLM is unavailable, the system falls back to a simpler rule-based scoring model and flags alerts for manual review.

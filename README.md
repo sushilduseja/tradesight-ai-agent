@@ -1,4 +1,4 @@
-# TradeSight AI Agent
+# TradeSight AI Agent [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sushilduseja/tradesight-ai-agent)
 ## Multi-Agent System for Trade Surveillance Alert Triage
 
 A production-grade portfolio project demonstrating end-to-end product management in AI systems—from user research and technical architecture through working prototype and governance frameworks.
